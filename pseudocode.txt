@@ -1,0 +1,46 @@
+const EMPTY_HEART = '♡'
+const FULL_HEART = '♥'
+
+get the heart that will be clicked
+
+// variable that will keep count of the clicking
+let clickCounter = 0;
+add the hidden class in the modal;
+
+heart.addEventListener('click', function () {
+    // Add a clickCounter to know the number of times the button is clicked
+    clickkCounter++;
+
+    // the functionalit that will be handled in the server when the heart is clicked
+    
+    // When button is clicked it will send the event to the server
+    mimicServerCall();
+
+    // No need for the json the server will only respond with success or failure
+        
+        // Actions to take when response is successfull
+        .then(function () {
+            // Conditions for the heart to be FULL_HEART or EMPTY_HEART
+            if (clickCounter % 2 === 1) {
+                change the clicked heart and make it FULL_HEART;
+                add .activated-heart className to make it red;
+            }
+            else {
+                make the heart to be EMPTY_HEART;
+            }
+
+        })
+
+        // Actions to be taken when the 
+        .catch(function(error) {
+            diplay the error caught in the server;
+            
+            remove the .hidden class;
+
+            // after 3 secs add back the .hidden class
+            setTimeOut(function () {
+                add back the .hidden class to the modal;
+            }, 3000)
+            
+        })
+})
